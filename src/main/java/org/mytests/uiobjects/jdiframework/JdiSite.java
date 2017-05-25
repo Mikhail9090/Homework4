@@ -20,4 +20,5 @@ public class JdiSite extends WebSite{
     @FindBy(css = "nav[role='navigation']")
     public static NavigationPanel navigationPanel;
 
+
 }

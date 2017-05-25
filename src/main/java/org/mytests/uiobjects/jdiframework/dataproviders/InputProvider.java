@@ -7,7 +7,7 @@ import org.testng.annotations.DataProvider;
  */
 public class InputProvider {
     @DataProvider(name = "input")
-    public Object[][] input() {
+    public static Object[][] input() {
         return new Object[][] {
                 {"epam", "testLastName", "student"},
                 {"epam", "admin", "student2"}

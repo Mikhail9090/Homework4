@@ -6,6 +6,7 @@ import com.epam.web.matcher.junit.Assert;
 import org.mytests.enums.NavigationMenu;
 import org.mytests.uiobjects.jdiframework.JdiSite;
 import org.mytests.uiobjects.jdiframework.dataproviders.InputProvider;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -41,5 +42,8 @@ public class SmokeTests extends TestNGBase {
         Assert.areEquals(contactFormPage.resultForm.name.getText(),"Name: " + name);
         Assert.areEquals(contactFormPage.resultForm.lastName.getText(),"Last Name: " + lastName);
         Assert.areEquals(contactFormPage.resultForm.description.getText(),"Description: " + description);
+        navigationPanel.loginButton.click();
+        navigationPanel.signOut.click();
     }
+
 }

@@ -19,4 +19,6 @@ public class NavigationPanel extends Section {
     public Label userNameLabel;
     @FindBy(css = "nav[role='navigation']>ul>li>a")
     public Menu<NavigationMenu> navigationMenu;
+    @FindBy(css = ".logout")
+    public Button signOut;
 }
