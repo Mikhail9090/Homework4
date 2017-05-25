@@ -2,7 +2,9 @@ package org.mytests.uiobjects.jdiframework.sections;
 
 import com.epam.jdi.uitests.web.selenium.elements.common.Button;
 import com.epam.jdi.uitests.web.selenium.elements.common.Label;
+import com.epam.jdi.uitests.web.selenium.elements.complex.Menu;
 import com.epam.jdi.uitests.web.selenium.elements.composite.Section;
+import org.mytests.enums.NavigationMenu;
 import org.openqa.selenium.support.FindBy;
 
 /**
@@ -15,4 +17,6 @@ public class NavigationPanel extends Section {
     public LoginPanel loginPanel;
     @FindBy(css = ".profile-photo>span")
     public Label userNameLabel;
+    @FindBy(css = "nav[role='navigation']>ul>li>a")
+    public Menu<NavigationMenu> navigationMenu;
 }
