@@ -3,8 +3,8 @@ package org.mytests.uiobjects.jdiframework;
 import com.epam.jdi.uitests.web.selenium.elements.composite.WebSite;
 import com.epam.jdi.uitests.web.selenium.elements.pageobjects.annotations.JPage;
 import com.epam.jdi.uitests.web.selenium.elements.pageobjects.annotations.JSite;
-import org.mytests.uiobjects.jdiframework.pages.ContactFormPage;
-import org.mytests.uiobjects.jdiframework.pages.HomePage;
+import org.mytests.uiobjects.jdiframework.pages.*;
+import org.mytests.uiobjects.jdiframework.pages.complextablepage.ComplexTablePage;
 import org.mytests.uiobjects.jdiframework.sections.NavigationPanel;
 import org.openqa.selenium.support.FindBy;
 
@@ -19,6 +19,10 @@ public class JdiSite extends WebSite{
     public static ContactFormPage contactFormPage;
     @FindBy(css = "nav[role='navigation']")
     public static NavigationPanel navigationPanel;
-
-
+    @JPage(url = "/page4.htm", title = "Dates")
+    public static DatesPage datesPage;
+    @JPage(url = "/page6.htm", title = "Simple Table")
+    public static SimpleTablePage simpleTablePage;
+    @JPage(url = "/page5.htm", title = "Complex Table")
+    public static ComplexTablePage complexTablePage;
 }

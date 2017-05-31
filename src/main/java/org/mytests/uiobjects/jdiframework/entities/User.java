@@ -1,4 +1,4 @@
-package org.mytests.uiobjects.jdiframework.dataproviders;
+package org.mytests.uiobjects.jdiframework.entities;
 
 
 import org.testng.annotations.DataProvider;
@@ -9,10 +9,12 @@ import org.testng.annotations.DataProvider;
 public class User {
     public static String login = "epam";
     public static String password = "1234";
-    @DataProvider
-    public Object[][] user() {
-        return new Object[][] {
-                {login, password}
-        };
+
+    public User(String name, String password) {
+        login = name;
+        this.password = password;
+    }
+    public User(){
+
     }
 }

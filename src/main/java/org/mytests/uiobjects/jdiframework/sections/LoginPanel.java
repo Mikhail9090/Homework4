@@ -3,7 +3,7 @@ package org.mytests.uiobjects.jdiframework.sections;
 import com.epam.jdi.uitests.web.selenium.elements.common.Button;
 import com.epam.jdi.uitests.web.selenium.elements.common.TextField;
 import com.epam.jdi.uitests.web.selenium.elements.composite.Form;
-import org.mytests.uiobjects.jdiframework.dataproviders.User;
+import org.mytests.uiobjects.jdiframework.entities.User;
 import org.openqa.selenium.support.FindBy;
 
 /**
