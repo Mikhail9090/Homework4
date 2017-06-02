@@ -10,8 +10,8 @@ public class User {
     public static String login = "epam";
     public static String password = "1234";
 
-    public User(String name, String password) {
-        login = name;
+    public User(String login, String password) {
+        this.login = login;
         this.password = password;
     }
     public User(){

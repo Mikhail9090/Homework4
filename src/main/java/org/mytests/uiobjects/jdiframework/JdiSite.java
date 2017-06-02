@@ -17,8 +17,6 @@ public class JdiSite extends WebSite{
     public static HomePage homePage;
     @JPage(url = "/page1.htm", title = "Contact Form")
     public static ContactFormPage contactFormPage;
-    @FindBy(css = "nav[role='navigation']")
-    public static NavigationPanel navigationPanel;
     @JPage(url = "/page4.htm", title = "Dates")
     public static DatesPage datesPage;
     @JPage(url = "/page6.htm", title = "Simple Table")

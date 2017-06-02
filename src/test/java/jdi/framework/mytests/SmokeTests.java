@@ -23,38 +23,23 @@ import static org.mytests.uiobjects.jdiframework.JdiSite.*;
 /**
  * Created by Mikhail_Churakov on 5/23/2017.
  */
-public class SmokeTests extends TestNGBase {
-    @BeforeSuite
-    public void setUp() {
-        WebSite.init(JdiSite.class);
-    }
-
-    @BeforeTest
-    public void openHost() {
-        homePage.open();
-    }
+public class SmokeTests extends InitTests {
 
     @BeforeMethod
     public void login() {
         homePage.shouldBeOpened();
-        navigationPanel.loginButton.click();
-        navigationPanel.loginPanel.login();
+        homePage.navigationPanel.loginButton.click();
+        homePage.navigationPanel.loginPanel.login();
     }
     @AfterMethod
     public void logOut() {
-        navigationPanel.loginButton.click();
-        navigationPanel.signOut.click();
-    }
-
-    public String getCurrentTime() {
-        DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
-        Date date = new Date();
-        return dateFormat.format(date);
+        homePage.navigationPanel.loginButton.click();
+        homePage.navigationPanel.signOut.click();
     }
 
     @Test(dataProvider = "input", dataProviderClass = InputProvider.class)
     public void specifyContForm(String name, String lastName, String description) {
-        navigationPanel.navigationMenu.select(NavigationMenu.CONTACT_FORM);
+        homePage.navigationPanel.navigationMenu.select(NavigationMenu.CONTACT_FORM);
         contactFormPage.name.input(name);
         contactFormPage.lastName.input(lastName);
         contactFormPage.description.input(description);
@@ -67,8 +52,8 @@ public class SmokeTests extends TestNGBase {
 
     @Test
     public void setDateAndTime() {
-        navigationPanel.serviceMenuDropdown.click();
-        navigationPanel.serviceMenu.select(ServiceMenu.DATES);
+        homePage.navigationPanel.serviceMenuDropdown.click();
+        homePage.navigationPanel.serviceMenu.select(ServiceMenu.DATES);
         datesPage.timeButton.click();
         datesPage.timePicker.changeMeridian.click();
         datesPage.timePicker.decrementHour.click();
@@ -82,16 +67,16 @@ public class SmokeTests extends TestNGBase {
     }
     @Test(dataProvider = "simpleTable", dataProviderClass = SimpleTableProvider.class)
     public void testSimpleTable(int column, int row, String data) {
-        navigationPanel.serviceMenuDropdown.click();
-        navigationPanel.serviceMenu.select(ServiceMenu.SIMPLE_TABLE);
+        homePage.navigationPanel.serviceMenuDropdown.click();
+        homePage.navigationPanel.serviceMenu.select(ServiceMenu.SIMPLE_TABLE);
         simpleTablePage.simpleTable.cell(column,row).click();
         Assert.areEquals(simpleTablePage.logPanel.lastLogData.getText(), getCurrentTime() +
                 " :value=" + data + "; cell has been selected");
     }
     @Test()
     public void testEntityTable() {
-        navigationPanel.serviceMenuDropdown.click();
-        navigationPanel.serviceMenu.select(ServiceMenu.COMPLEX_TABLE);
+        homePage.navigationPanel.serviceMenuDropdown.click();
+        homePage.navigationPanel.serviceMenu.select(ServiceMenu.COMPLEX_TABLE);
         List<Entity> entities = complexTablePage.complexTable.entities();
         List<String> actual = LinqUtils.select(entities, Entity::toString);
         //List<String> expected = new ArrayList<>();

@@ -17,9 +17,9 @@ public class LoginPanel extends Form<User>{
     @FindBy(css = ".fa-sign-in")
     public Button loginButton;
 
-    public void login() {
+    /*public void login() {
         loginInput.input(User.login);
         password.input(User.password);
         loginButton.click();
-    }
+    }*/
 }

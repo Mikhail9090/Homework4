@@ -27,4 +27,6 @@ public class NavigationPanel extends Section {
     public Menu<ServiceMenu> serviceMenu;
     @FindBy(css = ".dropdown-toggle[href='page1.htm']")
     public Dropdown<ServiceMenu> serviceMenuDropdown;
+
+
 }
