@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="WINDOWS-1251"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Test suite" parallel="methods" thread-count="2">
+<suite name="Test suite" parallel="methods" thread-count="1">
     <test name="Tests" preserve-order="true">
         <classes>
-            <class name="jdi.framework.mytests.SmokeTests"/>
+            <class name="jdi.framework.mytests.LoginTests"></class>
+            <class name="jdi.framework.mytests.ContactFormTests"></class>
+            <class name="jdi.framework.mytests.DatesTimeTests"></class>
+            <class name="jdi.framework.mytests.SimpleTableTests"></class>
+            <class name="jdi.framework.mytests.ComplexTableTests"></class>
         </classes>
     </test>
 </suite>

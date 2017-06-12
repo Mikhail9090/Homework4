@@ -12,10 +12,10 @@ import static org.mytests.uiobjects.jdiframework.JdiSite.homePage;
 /**
  * Created by Mikhail_Churakov on 5/31/2017.
  */
-public class States implements IPreconditions {
+public enum States implements IPreconditions {
     LOGGED_IN(() -> homePage.isLoggedIn(),
             () -> homePage.login()),
-    LOGGED_OUT(() ->homePage.isLoggedIn(),
+    LOGGED_OUT(() -> !homePage.isLoggedIn(),
             () -> homePage.logout());
 
     public Supplier<Boolean> checkAction;
@@ -24,7 +24,6 @@ public class States implements IPreconditions {
     States(Supplier<Boolean> checkAction, JAction moveToAction) {
         this.checkAction = checkAction;
         this.moveToAction = moveToAction;
-        alwaysMoveToCondition = true;
     }
 
     public Boolean checkAction() {

@@ -14,7 +14,8 @@ public class HomePage extends WebPage {
     public NavigationPanel navigationPanel;
 
     public boolean isLoggedIn() {
-        return !navigationPanel.userNameLabel.isDisplayed();
+        System.out.println("Label is displayed: " + navigationPanel.userNameLabel.isDisplayed());
+        return navigationPanel.userNameLabel.isDisplayed();
     }
 
     public void login() {
@@ -22,13 +23,24 @@ public class HomePage extends WebPage {
     }
 
     public void login(User user){
-        navigationPanel.loginButton.click();
-        navigationPanel.loginPanel.login(user);
+        if(!navigationPanel.loginPanel.isDisplayed())
+            navigationPanel.expandLoginPanel.click();
+        navigationPanel.loginPanel.loginAs(user);
     }
 
     public void logout() {
+        if(navigationPanel.userNameLabel.isDisplayed()) {
+            if(navigationPanel.signOut.isDisplayed())
+                navigationPanel.signOut.click();
+            else {
+                navigationPanel.expandLoginPanel.click();
+                navigationPanel.signOut.click();
+            }
+        }
+
+        /*
         if(!navigationPanel.signOut.isDisplayed())
-            navigationPanel.loginButton.click();
-        navigationPanel.signOut.click();
+            navigationPanel.expandLoginPanel.click();
+        navigationPanel.signOut.click();*/
     }
 }

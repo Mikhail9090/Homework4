@@ -11,7 +11,7 @@ import org.openqa.selenium.support.FindBy;
 /**
  * Created by Mikhail_Churakov on 5/23/2017.
  */
-@JSite(domain = "https://jdi-framework.github.io/tests/")
+@JSite(domain = "https://epam.github.io/JDI/")
 public class JdiSite extends WebSite{
     @JPage(url = "/index.htm", title = "Index Page")
     public static HomePage homePage;

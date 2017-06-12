@@ -14,14 +14,14 @@ import org.openqa.selenium.support.FindBy;
  */
 public class NavigationPanel extends Section {
     @FindBy(css = ".profile-photo")
-    public Button loginButton;
+    public Button expandLoginPanel;
     @FindBy(css = ".form-horizontal")
     public LoginPanel loginPanel;
     @FindBy(css = ".profile-photo>span")
     public Label userNameLabel;
     @FindBy(css = "nav[role='navigation']>ul>li>a")
     public Menu<NavigationMenu> navigationMenu;
-    @FindBy(css = ".logout")
+    @FindBy(css = ".fa-sign-out")
     public Button signOut;
     @FindBy(css = ".dropdown-menu>li")
     public Menu<ServiceMenu> serviceMenu;

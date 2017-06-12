@@ -18,6 +18,7 @@ import static org.mytests.uiobjects.jdiframework.JdiSite.homePage;
 public class InitTests extends TestNGBase {
     @BeforeSuite
     public void setUp() {
+
         WebSite.init(JdiSite.class);
     }
 
